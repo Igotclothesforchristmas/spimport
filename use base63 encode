@@ -1,0 +1,18 @@
+sign = "Bearer " + firebase.auth().currentUser.ac._lat
+pic = "PUT BASE64 IMAGE URI HERE"
+fetch("https://us-central1-sandtable-8d0f7.cloudfunctions.net/api/creations", {
+  "headers": {
+    "accept": "*/*",
+    "authorization": sign,
+    "content-type": "application/json",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "cross-site"
+  },
+  "referrer": "https://sandspiel.club/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "{\"title\":\"PUT THE POST NAME HERE\",\"image\":\"" + pic + "\",\"cells\":\"" + pic + "\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
